@@ -23,5 +23,5 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t shivsantoshiisc/test_1st:latest .
-          docker push shivsantoshiisc/test_1st:latest
+          docker build -t shivsantoshiisc/mlops:latest .
+          docker push shivsantoshiisc/mlops:latest
