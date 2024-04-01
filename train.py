@@ -11,6 +11,7 @@ labels = np.sort(np.unique(y))
 y = np.array([np.where(labels == x) for x in y]).flatten()
 
 # model = LogisticRegression().fit(X, y)
+#Adding Gaussian NB makes the score > 0.5 - so both action pass
 model = GaussianNB().fit(X, y)
 
 with open("model.pkl", 'wb') as f:
