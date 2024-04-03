@@ -12,6 +12,8 @@ jobs:
 
   pull-and-run:
     # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    name : pull-and-run
+    needs : [Train]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout docker code
