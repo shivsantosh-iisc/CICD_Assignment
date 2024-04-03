@@ -1,4 +1,9 @@
 #Introducing error so that actions fail
+# Introducing syntax error to train.py
+# This will result in error in 3 failures
+  # score.yml (evaluate)
+  # train.yml (build-push)
+  # test.yml (pull-and-run)
 iiiiiiimport pandas as pd
 from sklearn.linear_model import LogisticRegression
 import pickle
