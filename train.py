@@ -12,6 +12,13 @@ y = np.array([np.where(labels == x) for x in y]).flatten()
 
 # model = LogisticRegression().fit(X, y)
 #Adding Gaussian NB makes the score > 0.5 - so both action pass
+# Enhancing the model to use Gaussian NB
+
+# This will result in score > 0.5
+
+# score.yml (evaluate) -> pass
+# train.yml (build-push) -> pass
+# test.yml (pull-and-run) -> pass
 model = GaussianNB().fit(X, y)
 
 with open("model.pkl", 'wb') as f:
