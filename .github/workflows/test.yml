@@ -1,13 +1,17 @@
 name: Test
 
 on:
-  workflow_run:
-    workflows: ["Train"]
-    types:
-      - completed
+  push:
+   branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
+  Train:
+    uses: ./.github/workflows/train.yml
+    secrets: inherit
+
   pull-and-run:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout docker code
